@@ -3,31 +3,31 @@
 	http://localhost:8887/Argatroban_Calc/css/calcBS.css
 */
 
-* {
+/** {
 	margin: 0;
 	padding: 0;
-}
+}*/
 
-html {
+/*html {
 	margin: 0;
 	height: 100%;
-}
+}*/
 
 
-.wrapper{
+/*.wrapper{
 	margin-top: 60px;
 	background-color: #eee;
-}
+}*/
 
-body{
+/*body{
 	background-color: #fff;
-	/*margin: 0px;
-	padding: 0px;*/
+	margin: 0px;
+	padding: 0px;
 	font: .9em  Arial, Helvetica, Geneva, sans-serif;
 	color: #000;
 	
 	
-}
+}*/
 
 #background{
 	width: 550px;
@@ -36,14 +36,14 @@ body{
 	height: 600px;
 }
 
-#content{
+/*#content{
 	 
 	padding: 5px;
 
-/*	width: 500px;*/
+	width: 500px;
 	height: 580px;
 
-}
+}*/
 
 /*fieldset{
 	list-style: none;
@@ -52,10 +52,6 @@ body{
 	border: none;
 }*/
 
-fieldset ul{
-	list-style: none;
-	padding: 10px;
-}
 
 .To{
 	margin-bottom: 6px;
@@ -68,33 +64,31 @@ fieldset ul{
 
 .resultsHeading{
 	font: 1em/1.5em "arial black","Helvetica Neue", ArialBlack, Helvetica, Geneva, sans-serif;
-	height: 85px;
+	/*height: 85px;*/
 	border-top: 1px dotted #4D86C1;
 	border-bottom: 1px dotted #4D86C1;
-    margin:0 auto;
+    /*margin:0 auto;
     margin-top:15px;
     margin-bottom:0px;
-    padding-top:5px;
+    padding-top:5px;*/
 
 }
 
 #results{
 	background-color: #fff;
-    width:470px;
-    margin:0 auto;
-    min-height:175px;
-    height:175px;
-    font-size:x-small;
+   
+    /*margin:0 auto;*/
+  
         
 }
 
-td{
+/*td{
 	padding: 4px;
 	border-right: 1px solid #4D86C1;
 	border-bottom: 1px solid #4D86C1;
     min-height:34px;
     vertical-align:top;
-}
+}*/
 
 
 .noBorder{
@@ -129,33 +123,6 @@ td{
 	
 }
 /*Form Values*/
-form {
-		padding: 0;
-}
-
-fieldset {
-	margin-top:70px;
-/*	position:relative;*/
-	padding: 0;
-	width: 500px;
-	display: block;
-    margin-left:20px
-}
-
-
-fieldset label {
-	text-align:left;
-	font-family: "arial black";
-	font-stretch: wider;
-	padding-top: 5px;
-	margin-left: 5px;
-	display: block;
-	float: left;
-	width: 10.9em;
-	clear: left;
-	line-height: 30px;
-	
-}
 
 
 .ui-multiselect { padding:2px 0 2px 4px; text-align:left; margin: 5px .5em; width: 200px;}
@@ -165,22 +132,22 @@ select{
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	color: #666666;
-	padding: 3px;
-	height: 30px;
+	/*padding: 3px;
+	height: 30px;*/
 }
 
 input{
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	color: #666666;
-	padding: 3px;
+	/*padding: 3px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-khtml-border-radius: 5px;
 	height: 25px;
     text-align:center;
     width:100px;
-    margin:0px;
+    margin:0px;*/
     
 }
 
@@ -191,11 +158,11 @@ input{
 }
 
 form li {
-    float:right;
+    /*float:right;
     width:100%;
     height:50px;
     text-align:right;
-    padding-right:0px
+    padding-right:0px*/
 }
 
 #results p {
@@ -206,50 +173,44 @@ line-height:20px
 /*    list-style:none;*/
 }
 #adjRateTabs li  {
-    line-height:20px;
+    /*line-height:20px;*/
     /*font-size: small;*/
-    text-align:right;
-    list-style-type:none;
+    /*text-align:right;*/
+    /*list-style-type:none;*/
     padding:0px;
     margin:0;
     
 }
 #adjRateTabs li a{
-    width:90%;
-    float:right;
-    padding: 5px;
+    /*width:90%;
+    float:right;*/
+    /*padding: 5px;*/
 }
 .rateTxt {
     font-weight:bold;
     font-size:1em;
-    float:right;
-    width:180px;
-    display:inline-block;
-    clear:both;
+    
 }
 
 #TabArea {
     font: 1em/1.5em "arial black","Helvetica Neue", ArialBlack, Helvetica, Geneva, sans-serif;
-    width:470px;
-    margin:0 auto;
-    padding: 2px 0;
+    /*width:470px;*/
+    /*margin:0 auto;
+    padding: 2px 0;*/
 }
 
 .theTab {
-    font-size:9px; 
+    /*font-size:9px;*/ 
 }
 
 
 
 .Tlabels {
-    width:120px;
     text-align:right
 }
 
 .rateArea {
-    width:320px;
-    float:right;
-    padding:0px;
+    
 }
 
 
