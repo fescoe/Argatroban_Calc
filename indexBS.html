@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+   
+  <head>
+      
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <title>Argatroban Calculator</title>
+       
+       
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+        <!-- <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.3.custom.min.css" /> -->
+       <link rel="stylesheet" href="css/calcBS.css" type="text/css" /> 
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+       <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<!--       <script type="text/javascript" src="js/jquery.validate.min.js"></script>-->
+        <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.js"></script>
+  
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    
+        $(document).ready(function(){
+        
+          var weight = 0;
+          var SecOne = 0;
+          var SecTwo = 0;
+          var nomogram = 'standard';
+          $("#confirmBox").hide();
+          $("#results").hide();
+          
+         $.post("com/tracking.cfc?method=forTracking&returntype=JSON", function(data){
+  
+         });
+            
+//        set Tabs  
+          $(function() {
+              $("#results").tabs({
+              event: "mouseover"
+              }).addClass("ui-tabs-vertical ui-helper-clearfix");
+              $( "#results li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+          });
+            
+          function getValues() { 
+              // ParseValues make sure they are # & not strings 
+              var weight = parseInt( $('#weight').val(),10); // tell parseInt to use decimal (base 10)
+              var SecOne = parseInt( $('#SecOne').val(),10);
+              var SecTwo = parseInt( $('#SecTwo').val(),10);
+              var nomogram = $('#type').val();
+             
+                  if ( isNaN(weight) || isNaN(SecOne) || isNaN(SecTwo) || nomogram == "select") {
+                      
+                $("#IIRate").hide();
+                $("#results").hide();
+                  }else{
+                      calculate(weight,nomogram,SecOne,SecTwo);
+                     // alert('run the calculate function');
+                  }
+            
+              }
+          
+          $('#weight').blur(function() {
+              var weight = $(this).val();
+             if ( $('[name="weight"]').val() == ""){
+                 $(this).addClass(' ui-state-error');
+                 $(this).attr('placeholder','Weight Required');
+             }else{
+                $(this).removeClass("ui-state-error")
+                parseInt(weight);
+                getValues();    
+             }
+              
+            });
+          
+          $('#SecOne').blur(function() {
+              var SecOne = $(this).val();
+              if (( $(this).val() =="") ) {
+                  $(this).addClass(' ui-state-error');
+                  $(this).attr('placeholder','Secs Required');
+              }else{
+                 $(this).removeClass("ui-state-error")
+                 parseInt(SecOne);
+                 getValues();
+                }
+              
+            });
+          
+          $('#SecTwo').blur(function() {
+              var SecTwo = $(this).val();
+              if ( $(this).val() == "" ){
+                   $(this).addClass(' ui-state-error');
+                  $(this).attr('placeholder','Secs Required');
+              }else{
+                $(this).removeClass("ui-state-error")
+                parseInt(SecTwo);
+                getValues();
+              }
+            });
+          
+//            $("#type").select({
+//                multiple: false,
+//                header: "Select an option",
+//                noneSelectedText: "Select an Option",
+//                minWidth:255,
+//                selectedList: 1
+//            });
+            
+            
+    //     Get nomogram value From Drop Down
+        $('#type').change(function(){
+            if ($(this).val() == "select" ) {
+               $(this).addClass(' ui-state-error');
+               $("#results").hide();
+                $("#IIRate").hide();
+           }else{
+              $(this).removeClass("ui-state-error");
+                var nomogram = $(this).find("option:selected").text();
+                getValues();
+         
+            }
+            
+        }); // End of change function
+            
+           
+       
+        // calculate function
+        calculate = function(weight,nomogram,SecOne,SecTwo) {
+          // alert('weight'+weight+'nomo '+nomogram+' aPTT '+aPTT+'target'+targetaPTT);
+           
+             // Get higher Target --- This was removed and replaced with just SecTwo as of 01-31-2013
+               // if (SecTwo > 90) {
+                   // var halfRate = SecTwo;
+               // }else{
+                   // var halfRate = 90;
+               // }   
+               
+                // initial infusion rate
+              
+               // aPTT(sec)
+               var aPTT_R1 = "&#8804; "+(SecOne - 1);
+               var aPTT_R2 = SecOne + " to " + SecTwo + " (Target)";
+               var aPTT_R3 = SecTwo+1 + " to "+ (SecTwo+30); 
+               var aPTT_R4 = SecTwo+31 + " to "+ (SecTwo+59);
+               var aPTT_R5 =  "&#8805; "+(SecTwo+60);
+               
+               $(".aPTT_R1").html(aPTT_R1);
+               $(".aPTT_R2").html(aPTT_R2);
+               $(".aPTT_R3").html(aPTT_R3);
+               $(".aPTT_R4").html(aPTT_R4);
+               $(".aPTT_R5").html(aPTT_R5);
+               
+               // If SecTwo is gt 90 throw dialog
+               if (SecTwo > 90) {
+                $(function() {
+                 $("#confirmBox").dialog({
+                     modal:true,
+                     width:430,
+                     buttons: {
+                         Ok: function() {
+                             $(this).dialog("close");
+                         }
+                     }
+                 });
+                  
+               });
+             }  
+            
+            if (nomogram == 'hepatic') {
+             
+            $("#results").show();
+             var infusionRate = "<p class=\"ui-state-highlight\" style=\"padding:2px;\"><span style=\"font-size:1.3em;\"> 0.5 mcg/kg/min ( "+(weight * 0.5 * 60/1000)+" mL\/hr ); <\/span> check aPTT 2 hrs after start of infusion, then adjust rate of infusion as follows:<\/p>";
+                
+                $(".IIRate").html(infusionRate);
+                $("#IIRate").show();
+               // Infusion Rates
+               var IRC_R1 = "Increase rate by 0.1 mcg/kg/min (by " +(weight* 0.1 * 60/1000).toFixed(1)+ " mL\/hr)";
+               var IRC_R2 = "Continue at current rate";
+               var IRC_R3 = "Decrease rate by  0.1  mcg/kg/min (by " + (weight* 0.1 * 60/1000).toFixed(1) + " mL\/hr)";
+               var IRC_R4 = "Hold infusion for 2 hrs, then resume at half current rate";
+               var IRC_R5 = "Hold infusion for 2 hrs, then resume at half current rate when aPTT < "+ SecTwo +" sec";
+               
+               $("#IRC_R1").html(IRC_R1);
+               $("#IRC_R2").html(IRC_R2);
+               $("#IRC_R3").html(IRC_R3);
+               $("#IRC_R4").html(IRC_R4);
+               $("#IRC_R5").html(IRC_R5);
+               
+               //Check next aPTT
+               var cNext_R1 = "4 hrs after rate change";
+               var cNext_R2 = "4 hrs from last aPTT; after 2 consecutive aPTTs within target range, check aPTT every 12 hrs";
+               var cNext_R3 = cNext_R1;
+               var cNext_R4 = cNext_R1;
+               var cNext_R5 = "Repeat every 2 hrs until aPTT < "+ SecTwo +" sec, then follow nomogram.";
+               
+               $("#cNext_R1").html(cNext_R1);
+               $("#cNext_R2").html(cNext_R2);
+               $("#cNext_R3").html(cNext_R3);
+               $("#cNext_R4").html(cNext_R4);
+               $("#cNext_R5").html(cNext_R5);
+               
+                
+                
+            }else{ // Standard area all Calcs will be here
+             
+                $("#results").show();
+               var infusionRate = "<p class=\"ui-state-highlight\" style=\"padding:2px;\"><span style=\"font-size:1.3em;\"> 2 mcg/kg/min ( "+(weight * 2 * 60/1000)+" mL\/hr ); <\/span> check aPTT 2 hrs after start of infusion, then adjust rate of infusion as follows:";
+               
+               $(".IIRate").html(infusionRate);
+                $("#IIRate").show(); 
+               // Infusion Rates
+               var IRC_R1 = "Increase rate by 0.5 mcg/kg/min (by "+(weight* 0.5 * 60/1000).toFixed(1)+ " mL\/hr)";
+               var IRC_R2 = "Continue at current rate";
+               var IRC_R3 = "Decrease rate by 0.5 mcg/kg/min (by "+(weight* 0.5 * 60/1000).toFixed(1)+ " mL\/hr)";
+               var IRC_R4 = "Hold infusion for 1 hr, then resume at half current rate";
+               var IRC_R5 = "Hold infusion for 1 hr, then resume at half current rate when aPTT < "+ SecTwo +" sec";
+               
+               $("#IRC_R1").html(IRC_R1);
+               $("#IRC_R2").html(IRC_R2);
+               $("#IRC_R3").html(IRC_R3);
+               $("#IRC_R4").html(IRC_R4);
+               $("#IRC_R5").html(IRC_R5);
+               
+               //Check next aPTT
+               var cNext_R1 = "4 hrs after rate change";
+               var cNext_R2 = "4 hrs from last aPTT; after 2 consecutive aPTTs within target range, check aPTT every 12 hrs";
+               var cNext_R3 = cNext_R1;
+               var cNext_R4 = cNext_R1;
+               var cNext_R5 = "Repeat every 1 hr until aPTT < "+ SecTwo +" sec, then follow nomogram.";
+               
+               $("#cNext_R1").html(cNext_R1);
+               $("#cNext_R2").html(cNext_R2);
+               $("#cNext_R3").html(cNext_R3);
+               $("#cNext_R4").html(cNext_R4);
+               $("#cNext_R5").html(cNext_R5);
+               
+             //  alert(IRC_R1);
+            }
+            
+            
+        }; // End Calculate
+        
+           
+    });  // End DocReady     
+        
+    </script>
+    
+  </head>
+    <body>
+    
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Argatroban Nomogram</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                 <!--    <li>
+                        <a class="page-scroll" href="#view">View</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#search">Search</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll addCon" href="#add">Add</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll float-right" href="?Logout">Logout</a>
+                    </li>
+                </ul> -->
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+       
+       <div class="container-fluid wrapper">
+            
+          <div class="col-lg-12">
+               
+                <form name="calculator" id="calculator">
+                    
+                    <div class="form-group">
+                     
+                        <label for="Nomogram">Select Nomogram:</label>
+                        
+                        <select name="type" id="type" class="form-control ui-state-focus ui-corner-all required">
+                            <option value="select" selected>Select Nomogram</option>
+                            <option value="standard">Standard dose</option>
+                            <option value="hepatic">Low dose</option>
+                        </select>
+                        
+                    </div> <!-- / form-group -->
+                   
+                   <div class="form-group">
+                       <label for="weight" >Weight(kg):</label>
+                       <input name="weight" id="weight" size="12" class="form-control ui-state-focus ui-corner-all  required" type="text" placeholder="Weight (kg)" value="" />
+                   </div>
+                  
+                    <div class="form-group">
+                       <label for="name">Target aPTT Range:</label>
+                      <div class="form-inline">
+                       <input name="SecOne" id="SecOne"  type="text" placeholder="Seconds" class="form-control ui-state-focus ui-corner-all required" size="12" value="" /> <span class="To">To</span> 
+                       
+                      <input name="SecTwo" placeholder="Seconds" class="form-control ui-state-focus ui-corner-all required" id="SecTwo" type="text" size="12" value="" /></div>
+                      <span class="red" style="font-family:arial black; font-size:.8em; margin:10px;">Target aPTT should not exceed 90 sec</span><br/>
+                    
+                  </div>   
+                    
+                </form>   
+               
+       </div>
+           
+          
+           
+           <div id="confirmBox" title="Infusion Rate Alert"> <p class="ui-state-error">Please note the aPTT Target has exceeded 90 sec!</p></div> 
+           <div id="resultsHeading" ><p class="title">Initial Infusion Rate:</p>
+               <div id="IIRate" class="IIRate" align="center"> </div></div>
+           
+            <div id="TabArea">
+                <p class="title">Adjustment Rates:</p>
+            </div>
+           <div id="results">
+               <ul id="adjRateTabs">
+               <li><a href="#rate-1" class="theTab">aPTT <span class="aPTT_R1"></span></a></li>
+               <li><a href="#rate-2" class="theTab">aPTT <span class="aPTT_R2"></span></a></li>
+               <li><a href="#rate-3" class="theTab">aPTT <span class="aPTT_R3"></span></a></li>
+               <li><a href="#rate-4" class="theTab">aPTT <span class="aPTT_R4"></span></a></li>
+               <li><a href="#rate-5" class="theTab">aPTT <span class="aPTT_R5"></span></a></li>
+               </ul>
+           
+        <div id="rate-1" class="rateArea">
+            <table>
+                <tr>
+                    <td class="Tlabels">aPTT (sec):</td>
+                    <td class="rateTxt"><span class="aPTT_R1"></span></td>
+                </tr>
+                <tr>
+                    <td class="Tlabels">Infusion Rate Change:</td>
+                    <td class="rateTxt"> <span id="IRC_R1"></span></td>
+                </tr>
+                <tr>
+                    <td class="Tlabels">Check next aPTT:</td>
+                    <td class="rateTxt"> <span id="cNext_R1"></span></td>
+                </tr>
+            </table>
+               </div>    
+           <div id="rate-2" class="rateArea">
+               <table>
+                <tr>
+                    <td class="Tlabels">aPTT (sec):</td>
+                    <td class="rateTxt"><span class="aPTT_R2"></span></td>
+                </tr>
+                <tr>
+                    <td class="Tlabels">Infusion Rate Change:</td>
+                    <td class="rateTxt"> <span id="IRC_R2"></span></td>
+                </tr>
+                <tr>
+                    <td class="Tlabels">Check next aPTT:</td>
+                    <td class="rateTxt"> <span id="cNext_R2"></span></td>
+                </tr>
+            </table>
+               </div>    
+           <div id="rate-3" class="rateArea">
+               <table>
+                <tr>
+                    <td class="Tlabels">aPTT (sec):</td>
+                    <td class="rateTxt"><span class="aPTT_R3"></span></td>
+                </tr>
+                <tr>
+                    <td class="Tlabels">Infusion Rate Change:</td>
+                    <td class="rateTxt"> <span id="IRC_R3"></span></td>
+                </tr>
+                <tr>
+                    <td class="Tlabels">Check next aPTT:</td>
+                    <td class="rateTxt"> <span id="cNext_R3"></span></td>
+                </tr>
+            </table>
+               </div>    
+           <div id="rate-4" class="rateArea">
+              <table>
+                <tr>
+                    <td class="Tlabels">aPTT (sec):</td>
+                    <td class="rateTxt"><span class="aPTT_R4"></span></td>
+                </tr>
+                <tr>
+                    <td class="Tlabels">Infusion Rate Change:</td>
+                    <td class="rateTxt"> <span id="IRC_R4"></span></td>
+                </tr>
+                <tr>
+                    <td class="Tlabels">Check next aPTT:</td>
+                    <td class="rateTxt"> <span id="cNext_R4"></span></td>
+                </tr>
+            </table>
+               </div>    
+           <div id="rate-5" class="rateArea">
+              <table>
+                <tr>
+                    <td class="Tlabels">aPTT (sec):</td>
+                    <td class="rateTxt"><span class="aPTT_R5"></span></td>
+                </tr>
+                <tr>
+                    <td class="Tlabels">Infusion Rate Change:</td>
+                    <td class="rateTxt"> <span id="IRC_R5"></span></td>
+                </tr>
+                <tr>
+                    <td class="Tlabels">Check next aPTT:</td>
+                    <td class="rateTxt"> <span id="cNext_R5"></span></td>
+                </tr>
+            </table>
+               </div>    
+           
+               
+               
+               <div id="IIRate"> </div>
+          
+               
+<!--
+               <table cellspacing="0">
+              <tr class="ui-state-default">
+                  <th>aPTT (sec)</th>
+                  <th>Infusion Rate Change</th>
+                  <th class="noBorder">Check next aPTT</th>
+              </tr>
+              <tr>
+                  <td id="aPTT_R1" width="120"> </td>
+                  <td id="IRC_R1"> </td>
+                  <td id="cNext_R1" class="noBorder"> </td>
+              </tr>
+              <tr class="blue">
+                  <td id="aPTT_R2"> </td>
+                  <td id="IRC_R2"> </td>
+                  <td id="cNext_R2" class="noBorder"> </td>
+              </tr>
+              <tr>
+                  <td id="aPTT_R3"> </td>
+                  <td id="IRC_R3"> </td>
+                  <td id="cNext_R3" class="noBorder"> </td>
+              </tr>
+              <tr class="blue">
+                  <td id="aPTT_R4"> </td>
+                  <td id="IRC_R4"> </td>
+                  <td id="cNext_R4" class="noBorder"> </td>
+              </tr>
+              <tr>
+                  <td id="aPTT_R5"> </td>
+                  <td id="IRC_R5"> </td>
+                  <td id="cNext_R5" class="noBorder"> </td>
+              </tr>
+              
+          </table>
+-->
+           
+        
+            </div> <!-- /results -->
+        </div> <!-- /content -->
+      </ul>
+    </div> <!-- / col-lg-12 -->
+           <div class="EHNlogo">
+           <img src="images/EinsteinLogo.png" class="EHNlogo"/><br/><br/>
+               <small class="EHNlogo" style="padding-top:10px;">version 1.0 -- 6/16</small>
+           </div>
+      
+    </body>
+</html>
