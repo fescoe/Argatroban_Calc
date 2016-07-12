@@ -66,12 +66,11 @@ fieldset ul{
 
 
 
-#resultsHeading{
+.resultsHeading{
 	font: 1em/1.5em "arial black","Helvetica Neue", ArialBlack, Helvetica, Geneva, sans-serif;
 	height: 85px;
 	border-top: 1px dotted #4D86C1;
 	border-bottom: 1px dotted #4D86C1;
-    width:470px;
     margin:0 auto;
     margin-top:15px;
     margin-bottom:0px;
@@ -152,14 +151,14 @@ fieldset label {
 	margin-left: 5px;
 	display: block;
 	float: left;
-/*	width: 10.9em;*/
-	/*clear: left;*/
+	width: 10.9em;
+	clear: left;
 	line-height: 30px;
 	
 }
 
 
-/*.ui-multiselect { padding:2px 0 2px 4px; text-align:left; margin: 5px .5em; width: 200px;}*/
+.ui-multiselect { padding:2px 0 2px 4px; text-align:left; margin: 5px .5em; width: 200px;}
 
 select{
 	width: 200px;
