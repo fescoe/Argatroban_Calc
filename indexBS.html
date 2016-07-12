@@ -112,6 +112,7 @@
             if ($(this).val() == "select" ) {
                $(this).addClass(' ui-state-error');
                $("#results").hide();
+               $("#resultsHeading").hide();
                 $("#IIRate").hide();
            }else{
               $(this).removeClass("ui-state-error");
@@ -313,11 +314,13 @@
                   
                     <div class="form-group">
                        <label for="name">Target aPTT Range:</label>
-                      <div class="form-inline">
+                    <div class="form-inline">
                        <input name="SecOne" id="SecOne"  type="text" placeholder="Seconds" class="form-control ui-state-focus ui-corner-all required" size="12" value="" /> <span class="To">To</span> 
                        
-                      <input name="SecTwo" placeholder="Seconds" class="form-control ui-state-focus ui-corner-all required" id="SecTwo" type="text" size="12" value="" /></div>
-                      <span class="red" style="font-family:arial black; font-size:.8em; margin:10px;">Target aPTT should not exceed 90 sec</span><br/>
+                      <input name="SecTwo" placeholder="Seconds" class="form-control ui-state-focus ui-corner-all required" id="SecTwo" type="text" size="12" value="" />
+
+                    </div>
+                      <span class="red" style="font-family:arial black; font-size:.8em; margin:10px;">(Target aPTT should not exceed 90 sec)</span><br/>
                     
                   </div>   
                     
@@ -328,6 +331,8 @@
           
            
            <div id="confirmBox" title="Infusion Rate Alert"> <p class="ui-state-error">Please note the aPTT Target has exceeded 90 sec!</p></div> 
+           
+
            <div id="resultsHeading" ><p class="title">Initial Infusion Rate:</p>
                <div id="IIRate" class="IIRate" align="center"> </div></div>
            
