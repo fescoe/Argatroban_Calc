@@ -56,7 +56,7 @@
 .To{
 	margin-bottom: 6px;
 	display: inline-block;
-    font-family: "arial black";
+    /*font-family: "arial black";*/
     margin:0 5px;
 }
 
@@ -98,16 +98,16 @@
 	
 }
 
-.IIRate{
+/*.IIRate{
 	
 	display: block;
 	font-size: .70em;
 	width: 100%;
 	margin-right: 15px;
 	margin-top: 2px;
-/*	font-weight: bold;*/
+	font-weight: bold;
 	
-}
+}*/
 
 .red{
 	color: red;

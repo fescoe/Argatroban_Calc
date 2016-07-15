@@ -6,7 +6,6 @@
           var SecOne = 0;
           var SecTwo = 0;
           var nomogram = 'standard';
-          $("#confirmBox").hide();
           $("#results").hide();
           $("#IIRate").hide();
           
@@ -28,13 +27,14 @@
               var SecTwo = parseInt( $('#SecTwo').val(),10);
               var nomogram = $('#type').val();
              
-                  if ( isNaN(weight) || isNaN(SecOne) || isNaN(SecTwo) || nomogram == "select") {
-                      
+                  if ( isNaN(weight) || isNaN(SecOne) || isNaN(SecTwo) || nomogram == 'select') {
+
                 $("#IIRate").hide();
                 $("#results").hide();
+                  
                   }else{
                       calculate(weight,nomogram,SecOne,SecTwo);
-                     // alert('run the calculate function');
+                     
                   }
             
               }
@@ -67,9 +67,17 @@
           
           $('#SecTwo').blur(function() {
               var SecTwo = $(this).val();
-              if ( $(this).val() == "" ){
-                   $(this).addClass(' ui-state-error');
-                  $(this).attr('placeholder','Secs Required');
+              
+              if ($('#calculator').validator('validate').has('.has-error').length) { // if there are errors
+          
+           var  mainErrors = '<div class="alert alert-danger" style="margin-top:10px;" role="alert"><strong>Cheese and Crackers</strong> it appers that you didn\'t fill out all the required fields</div>';
+           $('.FormErrors').html(mainErrors).fadeIn("slow");
+           $('#ErrorAlerts').html(mainErrors);
+           $('#error').modal('show');
+              // if ( $(this).val() == "" ){
+              //      $(this).addClass(' ui-state-error');
+              //     $(this).attr('placeholder','Secs Required');
+              
               }else{
                 $(this).removeClass("ui-state-error")
                 parseInt(SecTwo);
@@ -89,11 +97,17 @@
     //     Get nomogram value From Drop Down
         $('#type').change(function(){
             if ($(this).val() == "select" ) {
-               $(this).addClass(' ui-state-error');
+             
+              // $(this).addClass(' ui-state-error');
+              var mainErrors = '<div class="alert alert-danger" style="margin-top:10px;" role="alert"><strong>Cheese and Crackers</strong> Please select a nomogram!</div>';
+                $('.FormErrors').html(mainErrors);
+                $('#ErrorAlerts').html(mainErrors);
+                $('#error').modal('show');
                $("#results").hide();
                 $("#IIRate").hide();
            }else{
-              $(this).removeClass("ui-state-error");
+            console.log('in else statement')
+            //  $(this).removeClass("ui-state-error");
                 var nomogram = $(this).find("option:selected").text();
                 getValues();
          
@@ -130,19 +144,24 @@
                $(".aPTT_R5").html(aPTT_R5);
                
                // If SecTwo is gt 90 throw dialog
+
                if (SecTwo > 90) {
-                $(function() {
-                 $("#confirmBox").dialog({
-                     modal:true,
-                     width:430,
-                     buttons: {
-                         Ok: function() {
-                             $(this).dialog("close");
-                         }
-                     }
-                 });
+               //  $(function() {
+               //   $("#confirmBox").dialog({
+               //       modal:true,
+               //       width:430,
+               //       buttons: {
+               //           Ok: function() {
+               //               $(this).dialog("close");
+               //           }
+               //       }
+               //   });
                   
-               });
+               // });   
+               var mainErrors = '<div class="alert alert-danger" style="margin-top:10px;" role="alert"><strong>Cheese and Crackers</strong> Please note the aPTT Target has exceeded 90 sec!</div>';
+                $('.FormErrors').html(mainErrors);
+                $('#ErrorAlerts').html(mainErrors);
+                $('#error').modal('show');
              }  
             
             if (nomogram == 'hepatic') {
@@ -181,7 +200,7 @@
                
                 
                 
-            }else{ // Standard area all Calcs will be here
+            }else if (nomogram == 'standard'){ // Standard area all Calcs will be here
              
                 $("#results").show();
                var infusionRate = "<p class=\"ui-state-highlight\" style=\"padding:2px;\"><span style=\"font-size:1.3em;\"> 2 mcg/kg/min ( "+(weight * 2 * 60/1000)+" mL\/hr ); <\/span> check aPTT 2 hrs after start of infusion, then adjust rate of infusion as follows:";
@@ -216,6 +235,13 @@
                $("#cNext_R5").html(cNext_R5);
                
              //  alert(IRC_R1);
+            }else{
+
+              var mainErrors = '<div class="alert alert-danger" style="margin-top:10px;" role="alert"><strong>Cheese and Crackers</strong> Please select a nomogram!</div>';
+                $('.FormErrors').html(mainErrors);
+                $('#ErrorAlerts').html(mainErrors);
+                $('#error').modal('show');
+
             }
             
             
