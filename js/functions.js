@@ -15,17 +15,11 @@
          });
             
 //        set Tabs  
-          $(function() {
-              $("#results").tabs({
-              event: "click"
-              }).addClass("ui-tabs-vertical ui-helper-clearfix");
-              $( "#results li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
-          });
 
-          // $('#adjRateTabs a').click(function (e) {
-          //   e.preventDefault()
-          //  $(this).tab('show')
-          // });
+          $('#adjRateTabs a').click(function (e) {
+            e.preventDefault()
+           $(this).tab('show')
+          });
             
           function getValues() { 
               // ParseValues make sure they are # & not strings 
