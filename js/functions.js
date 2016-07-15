@@ -152,6 +152,7 @@
                 
                 $(".IIRate").html(infusionRate);
                 $("#IIRate").show();
+                $("#rate-1").addClass("active");
                // Infusion Rates
                var IRC_R1 = "Increase rate by 0.1 mcg/kg/min (by " +(weight* 0.1 * 60/1000).toFixed(1)+ " mL\/hr)";
                var IRC_R2 = "Continue at current rate";
@@ -187,6 +188,7 @@
                
                $(".IIRate").html(infusionRate);
                 $("#IIRate").show(); 
+                $("#rate-1").addClass("active");
                // Infusion Rates
                var IRC_R1 = "Increase rate by 0.5 mcg/kg/min (by "+(weight* 0.5 * 60/1000).toFixed(1)+ " mL\/hr)";
                var IRC_R2 = "Continue at current rate";
