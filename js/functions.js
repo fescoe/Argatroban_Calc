@@ -45,6 +45,7 @@
                  $(this).addClass(' ui-state-error');
                  $(this).attr('placeholder','Weight Required');
              }else{
+                $(this).removeClass("ui-state-error")
                 parseInt(weight);
                 getValues();    
              }
@@ -53,9 +54,11 @@
           
           $('#SecOne').blur(function() {
               var SecOne = $(this).val();
-              if (( $(this).val() =="") || ( isNaN($(this).val()) ) ) {
+              if (( $(this).val() =="") ) {
+                  $(this).addClass(' ui-state-error');
                   $(this).attr('placeholder','Secs Required');
               }else{
+                 $(this).removeClass("ui-state-error")
                  parseInt(SecOne);
                  getValues();
                 }
@@ -64,8 +67,8 @@
           
           $('#SecTwo').blur(function() {
               var SecTwo = $(this).val();
-            
-              if ( $('#calculator').validator('validate').has('.has-error').length) { // if there are errors
+              
+              if ($('#calculator').validator('validate').has('.has-error').length) { // if there are errors
           
            var  mainErrors = '<div class="alert alert-danger" style="margin-top:10px;" role="alert"><strong>Cheese and Crackers</strong> it appers that you didn\'t fill out all the required fields</div>';
            $('.FormErrors').html(mainErrors).fadeIn("slow");
@@ -76,6 +79,7 @@
               //     $(this).attr('placeholder','Secs Required');
               
               }else{
+                $(this).removeClass("ui-state-error")
                 parseInt(SecTwo);
                 getValues();
               }
@@ -102,7 +106,8 @@
                $("#results").hide();
                 $("#IIRate").hide();
            }else{
-      
+            console.log('in else statement')
+            //  $(this).removeClass("ui-state-error");
                 var nomogram = $(this).find("option:selected").text();
                 getValues();
          
@@ -153,7 +158,7 @@
                //   });
                   
                // });   
-               var mainErrors = '<div class="alert alert-danger" style="margin-top:10px;" role="alert"><strong>Notice!</strong> Please note the aPTT Target has exceeded 90 sec!</div>';
+               var mainErrors = '<div class="alert alert-danger" style="margin-top:10px;" role="alert"><strong>Cheese and Crackers</strong> Please note the aPTT Target has exceeded 90 sec!</div>';
                 $('.FormErrors').html(mainErrors);
                 $('#ErrorAlerts').html(mainErrors);
                 $('#error').modal('show');
