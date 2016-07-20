@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"is",
+				"isNaN"
+			],
+			[
+				"n",
+				"nomogram"
+			],
+			[
+				"val",
+				"Validator"
+			],
+			[
+				"a",
+				"attr"
+			],
+			[
+				"results",
+				"resultsHeading"
+			],
+			[
 				"cont",
 				"control-label"
 			],
@@ -36,10 +56,6 @@
 				"output=\"true\"	output"
 			],
 			[
-				"a",
-				"access=\"public\"	access"
-			],
-			[
 				"re",
 				"returnformat	@returnformat"
 			],
@@ -66,10 +82,6 @@
 			[
 				"data",
 				"data-id"
-			],
-			[
-				"n",
-				"name"
 			],
 			[
 				"cfquery",
@@ -336,10 +348,6 @@
 				"typeahead"
 			],
 			[
-				"val",
-				"val"
-			],
-			[
 				"Chi",
 				"ChildLN"
 			],
@@ -506,14 +514,6 @@
 			[
 				"dat",
 				"dateTaken_ua"
-			],
-			[
-				"tot",
-				"tot_rec"
-			],
-			[
-				"Count",
-				"Counts"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "indexBS.html",
 			"settings":
 			{
-				"buffer_size": 20401,
+				"buffer_size": 12146,
 				"line_ending": "Unix"
 			}
 		}
@@ -580,6 +580,9 @@
 	},
 	"file_history":
 	[
+		"/Applications/MAMP/htdocs/Argatroban_Calc/js/validator.js",
+		"/Applications/MAMP/htdocs/Argatroban_Calc/js/functions.js",
+		"/Applications/MAMP/htdocs/Argatroban_Calc/indexBS.html",
 		"/Applications/MAMP/htdocs/Argatroban_Calc/css/bootstrap.min.css",
 		"/Applications/MAMP/htdocs/Argatroban_Calc/images/ArgatrobanBG.png",
 		"/Applications/MAMP/htdocs/Argatroban_Calc/index_old.html",
@@ -704,10 +707,7 @@
 		"/Applications/ColdFusion10/cfusion/wwwroot/mura6/plugins/FitnessTrack/cfc/Ftracker.cfc",
 		"/Applications/ColdFusion10/cfusion/wwwroot/mura6/plugins/FitnessTrack/plugin/settings.cfm",
 		"/Applications/ColdFusion10/cfusion/wwwroot/mura6/Track/includes/themes/TracknField/templates/two_column_SL.cfm",
-		"/Applications/ColdFusion10/cfusion/wwwroot/mura6/Fescoe/includes/themes/FescoeBootstrap/templates/home.cfm",
-		"/Applications/ColdFusion10/cfusion/wwwroot/mura6/Fescoe/includes/themes/FescoeBootstrap/templates/fescoe.cfm",
-		"/Applications/ColdFusion10/cfusion/wwwroot/mura6/Fescoe/includes/themes/FescoeBootstrap/templates/inc/html_head.cfm",
-		"/Applications/ColdFusion10/cfusion/wwwroot/mura6/Fescoe/includes/themes/FescoeBootstrap/templates/inc/FescoeHead.cfm"
+		"/Applications/ColdFusion10/cfusion/wwwroot/mura6/Fescoe/includes/themes/FescoeBootstrap/templates/home.cfm"
 	],
 	"find":
 	{
@@ -725,6 +725,17 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"hepatic",
+			"error",
+			"confirmBox",
+			"rate-2",
+			"rateArea",
+			"results",
+			"adjRateTabs",
+			"theTab",
+			"IIRate",
+			"resultsHeading",
+			"confirmBox",
 			"/>\n",
 			"url",
 			"html",
@@ -841,18 +852,7 @@
 			"T",
 			"SelfTest",
 			"testTookInsert",
-			"testtook",
-			"testTook",
-			"archiveQuestion",
-			"actionHolder",
-			"testView",
-			");\n",
-			"	\n",
-			"indexOf",
-			"contains",
-			"						\n",
-			"		//",
-			"</label>"
+			"testtook"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -878,15 +878,15 @@
 					"file": "indexBS.html",
 					"settings":
 					{
-						"buffer_size": 20401,
+						"buffer_size": 12146,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								797,
-								732
+								634,
+								634
 							]
 						],
 						"settings":
@@ -896,7 +896,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5178.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -964,6 +964,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 337.0,
+	"side_bar_width": 140.0,
 	"status_bar_visible": true
 }
