@@ -162,7 +162,7 @@
             if (nomogram == 'hepatic') {
              
             $("#results").show();
-             var infusionRate = "<p class=\"ui-state-highlight\" style=\"padding:2px;\"><span style=\"font-size:1.3em;\"> 0.5 mcg/kg/min ( "+(weight * 0.5 * 60/1000)+" mL\/hr ); <\/span> check aPTT 2 hrs after start of infusion, then adjust rate of infusion as follows:<\/p>";
+             var infusionRate = "<p> 0.5 mcg/kg/min ( "+(weight * 0.5 * 60/1000)+" mL\/hr ); <\/span> check aPTT 2 hrs after start of infusion, then adjust rate of infusion as follows:<\/p>";
                 
                 $(".IIRate").html(infusionRate);
                 $("#IIRate").show();
@@ -198,7 +198,7 @@
             }else if (nomogram == 'standard'){ // Standard area all Calcs will be here
              
                 $("#results").show();
-               var infusionRate = "<p class=\"ui-state-highlight\" style=\"padding:2px;\"><span style=\"font-size:1.3em;\"> 2 mcg/kg/min ( "+(weight * 2 * 60/1000)+" mL\/hr ); <\/span> check aPTT 2 hrs after start of infusion, then adjust rate of infusion as follows:";
+               var infusionRate = "<p> 2 mcg/kg/min ( "+(weight * 2 * 60/1000)+" mL\/hr ); <\/span> check aPTT 2 hrs after start of infusion, then adjust rate of infusion as follows:";
                
                $(".IIRate").html(infusionRate);
                 $("#IIRate").show(); 

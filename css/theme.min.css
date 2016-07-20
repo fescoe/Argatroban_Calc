@@ -322,7 +322,7 @@ a:focus{outline:dotted thin;outline:-webkit-focus-ring-color auto 5px;outline-of
 .img-rounded{border-radius:5px}
 .img-thumbnail{padding:4px;line-height:1.42857143;border:1px solid #eee;border-radius:4px;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;display:inline-block;max-width:100%;height:auto}
 .img-circle{border-radius:50%}
-hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}
+hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #f0e24e}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);border:0}
 .sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}
 [role=button]{cursor:pointer}
@@ -631,7 +631,7 @@ caption{padding-top:8px;padding-bottom:8px;color:#999}
 .table-condensed>tbody>tr>td,.table-condensed>tbody>tr>th,.table-condensed>tfoot>tr>td,.table-condensed>tfoot>tr>th,.table-condensed>thead>tr>td,.table-condensed>thead>tr>th{padding:5px}
 .table-bordered,.table-bordered>tbody>tr>td,.table-bordered>tbody>tr>th,.table-bordered>tfoot>tr>td,.table-bordered>tfoot>tr>th,.table-bordered>thead>tr>td,.table-bordered>thead>tr>th{border:1px solid #ddd}
 .table-bordered>thead>tr>td,.table-bordered>thead>tr>th{border-bottom-width:2px}
-.table-striped>tbody>tr:nth-of-type(odd){background-color:#f9f9f9}
+.table-striped>tbody>tr:nth-of-type(odd){background-color:#ddd}
 .table-hover>tbody>tr:hover,.table>tbody>tr.active>td,.table>tbody>tr.active>th,.table>tbody>tr>td.active,.table>tbody>tr>th.active,.table>tfoot>tr.active>td,.table>tfoot>tr.active>th,.table>tfoot>tr>td.active,.table>tfoot>tr>th.active,.table>thead>tr.active>td,.table>thead>tr.active>th,.table>thead>tr>td.active,.table>thead>tr>th.active{background-color:#f5f5f5}
 table col[class*=col-]{position:static;float:none;display:table-column}
 table td[class*=col-],table th[class*=col-]{position:static;float:none;display:table-cell}
@@ -807,15 +807,15 @@ tbody.collapse.in{display:table-row-group}
 .dropdown-header,.dropdown-menu>li>a{white-space:nowrap;padding:3px 20px;line-height:1.42857143}
 .dropdown-menu-right,.dropdown-menu.pull-right{left:auto;right:0}
 .dropdown-menu .divider{height:1px;margin:9px 0;overflow:hidden;background-color:#eee}
-.dropdown-menu>li>a{display:block;clear:both;font-weight:400;color:#999}
-.dropdown-menu>li>a:focus,.dropdown-menu>li>a:hover{text-decoration:none;color:#333;background-color:transparent}
+.dropdown-menu>li>a{display:block;clear:both;font-weight:400;color:#331066}
+.dropdown-menu>li>a:focus,.dropdown-menu>li>a:hover{text-decoration:none;color:#331066;background-color:transparent}
 .dropdown-menu>.active>a,.dropdown-menu>.active>a:focus,.dropdown-menu>.active>a:hover{color:#fff;text-decoration:none;outline:0;background-color:#331066}
 .dropdown-menu>.disabled>a,.dropdown-menu>.disabled>a:focus,.dropdown-menu>.disabled>a:hover{color:#eee}
 .dropdown-menu>.disabled>a:focus,.dropdown-menu>.disabled>a:hover{text-decoration:none;background-color:transparent;background-image:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);cursor:not-allowed}
 .open>.dropdown-menu{display:block}
 .open>a{outline:0}
 .dropdown-menu-left{left:0;right:auto}
-.dropdown-header{display:block;font-size:12px;color:#999}
+.dropdown-header{display:block;font-size:12px;color:#331066}
 .dropdown-backdrop{position:fixed;left:0;right:0;bottom:0;top:0;z-index:990}
 .nav-justified>.dropdown .dropdown-menu,.nav-tabs.nav-justified>.dropdown .dropdown-menu{left:auto;top:auto}
 .pull-right>.dropdown-menu{right:0;left:auto}
@@ -886,17 +886,17 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 .nav .open>a,.nav .open>a:focus,.nav .open>a:hover{background-color:#fff}
 .nav .nav-divider{height:1px;margin:9px 0;overflow:hidden;background-color:#e5e5e5}
 .nav>li>a>img{max-width:none}
-.nav-tabs{border-bottom:1px solid #250c49}
+.nav-tabs{border-bottom:1px solid #280d50}
 .nav-tabs>li{float:left;margin-bottom:-1px}
 .nav-tabs>li>a{margin-right:2px;line-height:1.42857143;border:1px solid transparent;border-radius:4px 4px 0 0}
-.nav-tabs>li>a:hover{border-color:#eee #eee #250c49}
-.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover{color:#555;background-color:#fff;border:1px solid #250c49;border-bottom-color:transparent;cursor:default}
+.nav-tabs>li>a:hover{border-color:#eee #eee #280d50}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover{color:#331066;background-color:#fff;border:1px solid #280d50;border-bottom-color:transparent;cursor:default}
 .nav-tabs.nav-justified{width:100%;border-bottom:0}
 .nav-tabs.nav-justified>li{float:none}
 .nav-tabs.nav-justified>li>a{text-align:center;margin-bottom:5px;margin-right:0;border-radius:4px}
-.nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:focus,.nav-tabs.nav-justified>.active>a:hover{border:1px solid #250c49}
+.nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:focus,.nav-tabs.nav-justified>.active>a:hover{border:1px solid #280d50}
 @media (min-width:768px){.nav-tabs.nav-justified>li{display:table-cell;width:1%}
-.nav-tabs.nav-justified>li>a{margin-bottom:0;border-bottom:1px solid #250c49;border-radius:4px 4px 0 0}
+.nav-tabs.nav-justified>li>a{margin-bottom:0;border-bottom:1px solid #280d50;border-radius:4px 4px 0 0}
 .nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:focus,.nav-tabs.nav-justified>.active>a:hover{border-bottom-color:#fff}
 }
 .nav-pills>li{float:left}
@@ -909,10 +909,10 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 .nav-justified>li>a{text-align:center;margin-bottom:5px}
 .nav-tabs-justified{border-bottom:0}
 .nav-tabs-justified>li>a{margin-right:0;border-radius:4px}
-.nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:focus,.nav-tabs-justified>.active>a:hover{border:1px solid #250c49}
+.nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:focus,.nav-tabs-justified>.active>a:hover{border:1px solid #280d50}
 @media (min-width:768px){.nav-justified>li{display:table-cell;width:1%}
 .nav-justified>li>a{margin-bottom:0}
-.nav-tabs-justified>li>a{border-bottom:1px solid #250c49;border-radius:4px 4px 0 0}
+.nav-tabs-justified>li>a{border-bottom:1px solid #280d50;border-radius:4px 4px 0 0}
 .nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:focus,.nav-tabs-justified>.active>a:hover{border-bottom-color:#fff}
 }
 .tab-content>.tab-pane{display:none}
@@ -990,7 +990,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 .navbar-right{float:right!important;margin-right:-15px}
 .navbar-right~.navbar-right{margin-right:0}
 }
-.navbar-default{background-color:#331066;border-color:#250c49}
+.navbar-default{background-color:#331066;border-color:#280d50}
 .navbar-default .navbar-brand{color:#eee}
 .navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:hover{color:#eee;background-color:transparent}
 .navbar-default .navbar-text{color:#999}
@@ -1000,7 +1000,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 .navbar-default .navbar-toggle{border-color:#eee}
 .navbar-default .navbar-toggle:focus,.navbar-default .navbar-toggle:hover{background-color:#fff}
 .navbar-default .navbar-toggle .icon-bar{background-color:#999}
-.navbar-default .navbar-collapse,.navbar-default .navbar-form{border-color:#250c49}
+.navbar-default .navbar-collapse,.navbar-default .navbar-form{border-color:#280d50}
 .navbar-default .navbar-nav>.open>a,.navbar-default .navbar-nav>.open>a:focus,.navbar-default .navbar-nav>.open>a:hover{background-color:transparent;color:#f0e24e}
 @media (max-width:767px){.navbar-default .navbar-nav .open .dropdown-menu>li>a{color:#eee}
 .navbar-default .navbar-nav .open .dropdown-menu>.active>a,.navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,.navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover,.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{color:#f0e24e;background-color:transparent}
@@ -1446,7 +1446,7 @@ label{font-weight:400}
 .has-success .control-label,.has-success .form-control-feedback,.has-success .help-block{color:#28b62c}
 .has-success .form-control,.has-success .form-control:focus{border:1px solid #28b62c;-webkit-box-shadow:inset 0 2px 0 rgba(0,0,0,.075);box-shadow:inset 0 2px 0 rgba(0,0,0,.075)}
 .nav .open>a,.nav .open>a:focus,.nav .open>a:hover{border-color:transparent}
-.nav-tabs .open>a,.nav-tabs .open>a:focus,.nav-tabs .open>a:hover,.nav-tabs>li>a{border-color:#250c49}
+.nav-tabs .open>a,.nav-tabs .open>a:focus,.nav-tabs .open>a:hover,.nav-tabs>li>a{border-color:#280d50}
 .nav-tabs>li>a{margin-top:6px;color:#333;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
 .nav-tabs .open>a,.nav-tabs .open>a:focus,.nav-tabs .open>a:hover,.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover,.nav-tabs>li>a:focus,.nav-tabs>li>a:hover{padding-top:13px;padding-bottom:13px;margin-top:0}
 .nav-tabs>li.disabled>a:focus,.nav-tabs>li.disabled>a:hover{padding-top:10px;padding-bottom:10px;margin-top:6px}
@@ -1458,7 +1458,7 @@ label{font-weight:400}
 .pager>.disabled>a:active,.pager>.disabled>a:hover,.pager>.disabled>span:active,.pager>.disabled>span:hover,.pagination>.disabled>a:active,.pagination>.disabled>a:hover,.pagination>.disabled>span:active,.pagination>.disabled>span:hover{top:0;border-width:0 1px 4px}
 .pager>.disabled>a,.pager>.disabled>a:active,.pager>.disabled>a:hover,.pager>.disabled>span,.pager>.disabled>span:active,.pager>.disabled>span:hover,.pager>li>a,.pager>li>a:active,.pager>li>a:hover,.pager>li>span,.pager>li>span:active,.pager>li>span:hover{border-left-width:2px;border-right-width:2px}
 .alert{border-width:0 1px 4px}
-.jumbotron,.panel,.progress,.well{border:1px solid #250c49}
+.jumbotron,.panel,.progress,.well{border:1px solid #280d50}
 .alert .alert-link,.alert a{font-weight:400;color:#fff;text-decoration:underline}
 .alert .close{color:#fff;text-decoration:none;opacity:.4}
 .alert .close:focus,.alert .close:hover{color:#fff;opacity:1}
