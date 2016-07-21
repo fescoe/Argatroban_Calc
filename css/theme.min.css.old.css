@@ -326,7 +326,7 @@ hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #f0e24e}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);border:0}
 .sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}
 [role=button]{cursor:pointer}
-.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{font-family:inherit;font-weight:400;line-height:1.1;color:inherit}
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{font-family:inherit;font-weight:400;line-height:1.1;color:#333}
 .h1 .small,.h1 small,.h2 .small,.h2 small,.h3 .small,.h3 small,.h4 .small,.h4 small,.h5 .small,.h5 small,.h6 .small,.h6 small,h1 .small,h1 small,h2 .small,h2 small,h3 .small,h3 small,h4 .small,h4 small,h5 .small,h5 small,h6 .small,h6 small{font-weight:400;line-height:1;color:#999}
 .h1,.h2,.h3,h1,h2,h3{margin-top:20px;margin-bottom:10px}
 .h1 .small,.h1 small,.h2 .small,.h2 small,.h3 .small,.h3 small,h1 .small,h1 small,h2 .small,h2 small,h3 .small,h3 small{font-size:65%}
@@ -886,17 +886,17 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 .nav .open>a,.nav .open>a:focus,.nav .open>a:hover{background-color:#fff}
 .nav .nav-divider{height:1px;margin:9px 0;overflow:hidden;background-color:#e5e5e5}
 .nav>li>a>img{max-width:none}
-.nav-tabs{border-bottom:1px solid #999}
+.nav-tabs{border-bottom:1px solid #280d50}
 .nav-tabs>li{float:left;margin-bottom:-1px}
 .nav-tabs>li>a{margin-right:2px;line-height:1.42857143;border:1px solid transparent;border-radius:4px 4px 0 0}
-.nav-tabs>li>a:hover{border-color:#eee #eee #999}
-.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover{color:#331066;background-color:#fff;border:1px solid #999;border-bottom-color:transparent;cursor:default}
+.nav-tabs>li>a:hover{border-color:#eee #eee #280d50}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover{color:#331066;background-color:#fff;border:1px solid #280d50;border-bottom-color:transparent;cursor:default}
 .nav-tabs.nav-justified{width:100%;border-bottom:0}
 .nav-tabs.nav-justified>li{float:none}
 .nav-tabs.nav-justified>li>a{text-align:center;margin-bottom:5px;margin-right:0;border-radius:4px}
-.nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:focus,.nav-tabs.nav-justified>.active>a:hover{border:1px solid #999}
+.nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:focus,.nav-tabs.nav-justified>.active>a:hover{border:1px solid #280d50}
 @media (min-width:768px){.nav-tabs.nav-justified>li{display:table-cell;width:1%}
-.nav-tabs.nav-justified>li>a{margin-bottom:0;border-bottom:1px solid #999;border-radius:4px 4px 0 0}
+.nav-tabs.nav-justified>li>a{margin-bottom:0;border-bottom:1px solid #280d50;border-radius:4px 4px 0 0}
 .nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:focus,.nav-tabs.nav-justified>.active>a:hover{border-bottom-color:#fff}
 }
 .nav-pills>li{float:left}
@@ -909,10 +909,10 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 .nav-justified>li>a{text-align:center;margin-bottom:5px}
 .nav-tabs-justified{border-bottom:0}
 .nav-tabs-justified>li>a{margin-right:0;border-radius:4px}
-.nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:focus,.nav-tabs-justified>.active>a:hover{border:1px solid #999}
+.nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:focus,.nav-tabs-justified>.active>a:hover{border:1px solid #280d50}
 @media (min-width:768px){.nav-justified>li{display:table-cell;width:1%}
 .nav-justified>li>a{margin-bottom:0}
-.nav-tabs-justified>li>a{border-bottom:1px solid #999;border-radius:4px 4px 0 0}
+.nav-tabs-justified>li>a{border-bottom:1px solid #280d50;border-radius:4px 4px 0 0}
 .nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:focus,.nav-tabs-justified>.active>a:hover{border-bottom-color:#fff}
 }
 .tab-content>.tab-pane{display:none}
