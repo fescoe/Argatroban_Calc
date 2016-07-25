@@ -33,19 +33,21 @@
                 $("#results").hide();
                   
                   }else{
+                    
                       calculate(weight,nomogram,SecOne,SecTwo);
                      
                   }
             
-              }
+              } // end getValues
           
           $('#weight').blur(function() {
               var weight = $(this).val();
              if ( $('[name="weight"]').val() == ""){
-                 $(this).addClass(' ui-state-error');
+                 
                  $(this).attr('placeholder','Weight Required');
              }else{
                 parseInt(weight);
+
                 getValues();    
              }
               
@@ -76,7 +78,9 @@
               //     $(this).attr('placeholder','Secs Required');
               
               }else{
+                
                 parseInt(SecTwo);
+
                 getValues();
               }
             });
@@ -115,7 +119,12 @@
         // calculate function
         calculate = function(weight,nomogram,SecOne,SecTwo) {
           // alert('weight'+weight+'nomo '+nomogram+' aPTT '+aPTT+'target'+targetaPTT);
-           
+           if ( $("#rate-1").hasClass("active") == false) {
+                $("#rate-1").addClass("active");
+               // alert('i made it');
+           }else{
+            $("#rate-1").removeClass("active")
+           }
              // Get higher Target --- This was removed and replaced with just SecTwo as of 01-31-2013
                // if (SecTwo > 90) {
                    // var halfRate = SecTwo;
@@ -166,7 +175,7 @@
                 
                 $(".IIRate").html(infusionRate);
                 $("#IIRate").show();
-                $("#rate-1").addClass("active");
+               
                // Infusion Rates
                var IRC_R1 = "Increase rate by 0.1 mcg/kg/min (by " +(weight* 0.1 * 60/1000).toFixed(1)+ " mL\/hr)";
                var IRC_R2 = "Continue at current rate";
@@ -202,7 +211,7 @@
                
                $(".IIRate").html(infusionRate);
                 $("#IIRate").show(); 
-                $("#rate-1").addClass("active");
+                
                // Infusion Rates
                var IRC_R1 = "Increase rate by 0.5 mcg/kg/min (by "+(weight* 0.5 * 60/1000).toFixed(1)+ " mL\/hr)";
                var IRC_R2 = "Continue at current rate";
