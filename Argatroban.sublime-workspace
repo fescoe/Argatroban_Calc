@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"fa",
+				"false"
+			],
+			[
+				"adj",
+				"adjRateTabs"
+			],
+			[
+				"d",
+				"display"
+			],
+			[
+				"bor",
+				"border-color"
+			],
+			[
 				"is",
 				"isNaN"
 			],
@@ -210,10 +226,6 @@
 			[
 				"ev",
 				"event_att"
-			],
-			[
-				"d",
-				"date"
 			],
 			[
 				"aID",
@@ -502,18 +514,6 @@
 			[
 				"f",
 				"false"
-			],
-			[
-				"minPas",
-				"minPass_mod"
-			],
-			[
-				"cfqy",
-				"cfqueryparam	cfqueryparam"
-			],
-			[
-				"dat",
-				"dateTaken_ua"
 			]
 		]
 	},
@@ -523,7 +523,15 @@
 			"file": "indexBS.html",
 			"settings":
 			{
-				"buffer_size": 12146,
+				"buffer_size": 12995,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/functions.js",
+			"settings":
+			{
+				"buffer_size": 10614,
 				"line_ending": "Unix"
 			}
 		}
@@ -580,9 +588,9 @@
 	},
 	"file_history":
 	[
-		"/Applications/MAMP/htdocs/Argatroban_Calc/js/validator.js",
-		"/Applications/MAMP/htdocs/Argatroban_Calc/js/functions.js",
 		"/Applications/MAMP/htdocs/Argatroban_Calc/indexBS.html",
+		"/Applications/MAMP/htdocs/Argatroban_Calc/js/functions.js",
+		"/Applications/MAMP/htdocs/Argatroban_Calc/js/validator.js",
 		"/Applications/MAMP/htdocs/Argatroban_Calc/css/bootstrap.min.css",
 		"/Applications/MAMP/htdocs/Argatroban_Calc/images/ArgatrobanBG.png",
 		"/Applications/MAMP/htdocs/Argatroban_Calc/index_old.html",
@@ -725,6 +733,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"console.log",
+			"Tlabels",
 			"hepatic",
 			"error",
 			"confirmBox",
@@ -850,9 +860,7 @@
 			"trang",
 			"Trang",
 			"T",
-			"SelfTest",
-			"testTookInsert",
-			"testtook"
+			"SelfTest"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -870,7 +878,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -878,15 +886,15 @@
 					"file": "indexBS.html",
 					"settings":
 					{
-						"buffer_size": 12146,
+						"buffer_size": 12995,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								634,
-								634
+								898,
+								898
 							]
 						],
 						"settings":
@@ -896,7 +904,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1134.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/functions.js",
+					"settings":
+					{
+						"buffer_size": 10614,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4342,
+								4342
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1478.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -964,6 +1000,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 140.0,
+	"side_bar_width": 276.0,
 	"status_bar_visible": true
 }
